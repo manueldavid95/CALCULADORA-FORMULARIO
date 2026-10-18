@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario || Calculador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <!-- reset -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- estilos propios -->
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+    <!-- inicio del container -->
+    <div class="container">
+        <h1 class="titulo">Calculadora Sencilla</h1>
+        <form id="formulario" class="formulario">
+            <div class="form-div">
+                <label for="numeroUno">Numero 1</label>
+                <input type="number" id="numeroUno" placeholder="Ingrese un numero">
+            </div>
+            <div class="form-div">
+                <label for="numeroDos">Numero 2</label>
+                <input type="number" id="numeroDos" placeholder="Ingrese un numero">
+            </div>
+            <div class="form-div">
+                <label for="resultado">Resultado</label>
+                <input type="text" id="resultado" disabled>
+            </div>
+            <div class="botones">
+                <button type="submit" value="suma" class="btn">Suma</button>
+                <button type="submit" value="resta" class="btn">Resta</button>
+                <button type="submit" value="multiplicacion" class="btn">Multiplicación</button>
+                <button type="submit" value="division" class="btn">División</button>
+                <button type="reset" id="btnLimpiar" class="btn btn-limpiar">Limpiar</button>
+            </div>
+        </form>
+    </div>
+    <!-- fin del container -->
+
+    <!-- js -->
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

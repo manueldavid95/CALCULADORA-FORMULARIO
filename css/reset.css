@@ -1,0 +1,47 @@
+/* Si quieres que todos tus elementos usen el modelo de cajas alternativo (opción común entre los desarrolladores) debes establecer la propiedad box-sizing en el elemento <html>. Luego debes configurar todos los demás elementos para que hereden ese valor, como se ve en el fragmento de código siguiente. Si deseas comprender qué hay detrás, consulta el artículo de CSS-Tricks sobre el tamaño de las cajas. */
+
+html {
+    box-sizing: border-box;
+    /* 10px */
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* imagenes responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+/* body */
+body {
+    /* 16px para todo el documento */
+    font-size: 1.6rem;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* reseteo para los enlaces */
+a {
+    text-decoration: none;
+}
+
+/* margin en encabezados y parrafos */
+h1, h2, h3, h4, h5, h6,
+p,
+figure, figcaption {
+    margin: 0;
+}
+
+/* para que las listas no tengan ni margen ni relleno. */
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,84 @@
+/* estilos para el body */
+body {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #00084f 0.000%, #001e78 25.000%, #0034a6 50.000%, #0049d8 75.000%, #005eff 100.000%);
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+/* estilos para el contenedor */
+.container {
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #fdfbfb;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+/* tienes que terminar esto un fin de semana o un dia tranquilo we */
+.titulo {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media(max-width: 500px) {
+        font-size: 26px;
+    }
+
+    @media(max-width: 375px) {
+        font-size: 23px;
+    }
+}
+
+.formulario {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-div label {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-div input {
+    border: 2px solid black;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+    @media(max-width: 500px) {
+        flex-direction: column;
+    }
+}
+
+.btn {
+    background: linear-gradient(180deg, #00084f 0.000%, #001e78 25.000%, #0034a6 50.000%, #0049d8 75.000%, #005eff 100.000%);
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+}
