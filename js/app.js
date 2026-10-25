@@ -1,5 +1,6 @@
 // formularios
 const form = document.getElementById('formulario')
+
 //efecto para el form
 form.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -17,7 +18,6 @@ form.addEventListener("submit", (e) => {
         resultado.value = 'NO ACEPTO NUMEROS NEGATIVOS AMOR'
         return
     }
-
 
     let operacion = e.submitter.value;
     let operacionResultado = 0
@@ -39,7 +39,13 @@ form.addEventListener("submit", (e) => {
             }
             break;
     }
-    resultado.value = operacionResultado
+
+    // Formatear el resultado si es un número
+    if (typeof operacionResultado === 'number') {
+        resultado.value = parseFloat(operacionResultado.toFixed(4));
+    } else {
+        resultado.value = operacionResultado;
+    }
 })
 
 form.addEventListener("reset", () => {
