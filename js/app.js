@@ -1,19 +1,19 @@
 // formularios
 const form = document.getElementById('formulario')
 
-//efecto para el form
+// efecto para el form
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     const numeroUno = parseFloat(document.getElementById('numeroUno').value)
     const numeroDos = parseFloat(document.getElementById('numeroDos').value)
     let resultado = document.getElementById('resultado')
 
-    //validacion para caracteres
+    // validacion para caracteres
     if (isNaN(numeroUno) || isNaN(numeroDos)) {
         return resultado.value = 'no acepto cadenas de texto'
     }
 
-    //numeros negativos
+    // numeros negativos
     if (numeroUno < 0 || numeroDos < 0) {
         resultado.value = 'NO ACEPTO NUMEROS NEGATIVOS AMOR'
         return
@@ -40,9 +40,9 @@ form.addEventListener("submit", (e) => {
             break;
     }
 
-    // Si es un número, lo mostramos fijado a 2 decimales (ej: 1.50)
+    // Forzar siempre 2 decimales en pantalla como texto
     if (typeof operacionResultado === 'number') {
-        resultado.value = operacionResultado.toFixed(2);
+        resultado.value = operacionResultado.toFixed(2); // "3.00"
     } else {
         resultado.value = operacionResultado;
     }
