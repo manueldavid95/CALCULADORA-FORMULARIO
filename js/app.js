@@ -40,9 +40,13 @@ form.addEventListener("submit", (e) => {
             break;
     }
 
-    // Forzar siempre 2 decimales en pantalla como texto
+    // Formatear a 2 decimales SOLO en multiplicación y división
     if (typeof operacionResultado === 'number') {
-        resultado.value = operacionResultado.toFixed(2); // "3.00"
+        if (operacion === 'multiplicacion' || operacion === 'division') {
+            resultado.value = operacionResultado.toFixed(2); // Muestra decimales (ej: 3.00)
+        } else {
+            resultado.value = operacionResultado; // Muestra el resultado entero normal
+        }
     } else {
         resultado.value = operacionResultado;
     }
