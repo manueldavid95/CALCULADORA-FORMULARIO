@@ -40,9 +40,9 @@ form.addEventListener("submit", (e) => {
             break;
     }
 
-    // Formatear el resultado si es un número
+    // Si es un número, lo mostramos fijado a 2 decimales (ej: 1.50)
     if (typeof operacionResultado === 'number') {
-        resultado.value = parseFloat(operacionResultado.toFixed(4));
+        resultado.value = operacionResultado.toFixed(2);
     } else {
         resultado.value = operacionResultado;
     }
