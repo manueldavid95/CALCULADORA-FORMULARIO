@@ -4,8 +4,11 @@ const form = document.getElementById('formulario')
 // efecto para el form
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    const numeroUno = parseFloat(document.getElementById('numeroUno').value)
-    const numeroDos = parseFloat(document.getElementById('numeroDos').value)
+    const rawUno = document.getElementById('numeroUno').value
+    const rawDos = document.getElementById('numeroDos').value
+
+    const numeroUno = parseFloat(rawUno)
+    const numeroDos = parseFloat(rawDos)
     let resultado = document.getElementById('resultado')
 
     // validacion para caracteres
@@ -40,12 +43,20 @@ form.addEventListener("submit", (e) => {
             break;
     }
 
-    // Formatear a 2 decimales SOLO en multiplicación y división
     if (typeof operacionResultado === 'number') {
-        if (operacion === 'multiplicacion' || operacion === 'division') {
-            resultado.value = operacionResultado.toFixed(2); // Muestra decimales (ej: 3.00)
+        // Verifica si alguno de los datos ingresados o el resultado tiene decimales
+        const tieneDecimalesInput = !Number.isInteger(numeroUno) || !Number.isInteger(numeroDos);
+
+        if (tieneDecimalesInput) {
+            // Determina cuántos decimales se ingresaron para conservar el formato
+            const decUno = rawUno.includes('.') ? rawUno.split('.')[1].length : 0;
+            const decDos = rawDos.includes('.') ? rawDos.split('.')[1].length : 0;
+            const maxDecimales = Math.max(decUno, decDos);
+
+            resultado.value = operacionResultado.toFixed(maxDecimales);
         } else {
-            resultado.value = operacionResultado; // Muestra el resultado entero normal
+            // Si todo son números enteros, se muestra normal sin ceros extra
+            resultado.value = operacionResultado;
         }
     } else {
         resultado.value = operacionResultado;
